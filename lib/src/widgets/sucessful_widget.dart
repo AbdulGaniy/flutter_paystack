@@ -86,7 +86,7 @@ class _SuccessfulWidgetState extends State<SuccessfulWidget>
             Text(
               'Payment Successful',
               style: TextStyle(
-                color: context.textTheme().headlineSmall.color,
+                color: context.textTheme().headlineSmall?.color,
                 fontWeight: FontWeight.w500,
                 fontSize: 16.0,
               ),
