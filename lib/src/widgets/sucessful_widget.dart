@@ -98,7 +98,7 @@ class _SuccessfulWidgetState extends State<SuccessfulWidget>
                 ? new Container()
                 : new Text('You paid ${Utils.formatAmount(widget.amount)}',
                     style: TextStyle(
-                      color: context.textTheme().headlineSmall.color,
+                      color: context.textTheme().headlineSmall?.color,
                       fontWeight: FontWeight.normal,
                       fontSize: 14.0,
                     )),
