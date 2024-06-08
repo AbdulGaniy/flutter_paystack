@@ -49,6 +49,7 @@ class _CardCheckoutState extends BaseCheckoutMethodState<CardCheckout> {
 
     return new Container(
       alignment: Alignment.center,
+      color: Colors.white,
       child: new Column(
         children: <Widget>[
           new Text(

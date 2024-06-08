@@ -4,6 +4,7 @@ import 'dart:io';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_paystack/src/models/checkout_response.dart';
+import 'package:flutter_paystack/src/widgets/common/extensions.dart';
 
 abstract class BaseState<T extends StatefulWidget> extends State<T> {
   bool isProcessing = false;
@@ -58,16 +59,26 @@ abstract class BaseState<T extends StatefulWidget> extends State<T> {
             ],
           )
         : new AlertDialog(
+        backgroundColor: Color(0xFF0A4751),
             content: text,
             actions: <Widget>[
               new TextButton(
-                  child: const Text('NO'),
+                  child: const Text(
+                      'NO',
+                     style: TextStyle(
+                       color: Colors.white,
+                     ),
+                  ),
                   onPressed: () {
                     Navigator.of(context).pop(
                         false); // Pops the confirmation dialog but not the page.
                   }),
               new TextButton(
-                  child: const Text('YES'),
+                  child: const Text('YES',
+                    style: TextStyle(
+                      color: Colors.white,
+                    ),
+                  ),
                   onPressed: () {
                     Navigator.of(context).pop(
                         true); // Returning true to _onWillPop will pop again.

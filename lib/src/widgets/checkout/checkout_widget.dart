@@ -90,49 +90,52 @@ class _CheckoutWidgetState extends BaseState<CheckoutWidget>
 
   @override
   Widget buildChild(BuildContext context) {
-    var securedWidget = Column(
-      crossAxisAlignment: CrossAxisAlignment.center,
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: <Widget>[
-        Row(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Icon(Icons.lock, size: 10),
-            Padding(
-              padding: EdgeInsetsDirectional.only(start: 3),
-              child: Text(
-                "Secured by",
-                key: Key("SecuredBy"),
-                style: TextStyle(fontSize: 10),
-              ),
-            )
-          ],
-        ),
-        SizedBox(height: 5),
-        Row(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            if (widget.logo != null)
+    var securedWidget = Container(
+      color: Colors.white,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: <Widget>[
+          Row(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              Icon(Icons.lock, size: 10,),
               Padding(
-                padding: EdgeInsetsDirectional.only(end: 3),
-                child: Image.asset(
-                  'assets/images/paystack_icon.png',
-                  key: Key("PaystackBottomIcon"),
-                  package: 'flutter_paystack',
-                  height: 16,
+                padding: EdgeInsetsDirectional.only(start: 3),
+                child: Text(
+                  "Secured by",
+                  key: Key("SecuredBy"),
+                  style: TextStyle(fontSize: 10),
                 ),
-              ),
-            Image.asset(
-              'assets/images/paystack.png',
-              key: Key("PaystackLogo"),
-              package: 'flutter_paystack',
-              height: 15,
-            )
-          ],
-        )
-      ],
+              )
+            ],
+          ),
+          SizedBox(height: 5),
+          Row(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              if (widget.logo != null)
+                Padding(
+                  padding: EdgeInsetsDirectional.only(end: 3),
+                  child: Image.asset(
+                    'assets/images/paystack_icon.png',
+                    key: Key("PaystackBottomIcon"),
+                    package: 'flutter_paystack',
+                    height: 16,
+                  ),
+                ),
+              Image.asset(
+                'assets/images/paystack.png',
+                key: Key("PaystackLogo"),
+                package: 'flutter_paystack',
+                height: 15,
+              )
+            ],
+          )
+        ],
+      ),
     );
     return new CustomAlertDialog(
       expanded: true,
@@ -141,11 +144,13 @@ class _CheckoutWidgetState extends BaseState<CheckoutWidget>
       onCancelPress: onCancelPress,
       title: _buildTitle(),
       content: new Container(
+        color: Colors.white,
         child: new SingleChildScrollView(
           child: GestureDetector(
             onTap: () => FocusScope.of(context).unfocus(),
             behavior: HitTestBehavior.translucent,
             child: new Container(
+              color: Colors.white,
                 padding: const EdgeInsets.symmetric(
                     vertical: 10.0, horizontal: 10.0),
                 child: Column(
@@ -166,7 +171,7 @@ class _CheckoutWidgetState extends BaseState<CheckoutWidget>
   }
 
   Widget _buildTitle() {
-    final accentColor = context.colorScheme().secondary;
+    final accentColor = Colors.white;
     var emailAndAmount = Column(
       crossAxisAlignment: CrossAxisAlignment.end,
       children: <Widget>[
@@ -208,6 +213,7 @@ class _CheckoutWidgetState extends BaseState<CheckoutWidget>
       mainAxisSize: MainAxisSize.min,
       children: <Widget>[
         new Container(
+          color: Colors.white,
           padding: const EdgeInsets.all(10.0),
           child: new Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -242,7 +248,7 @@ class _CheckoutWidgetState extends BaseState<CheckoutWidget>
       duration: const Duration(milliseconds: 300),
       curve: Curves.fastOutSlowIn,
       child: new Container(
-        color: context.colorScheme().background.withOpacity(0.5),
+        color: Colors.white,
         height: _tabHeight,
         alignment: Alignment.center,
         child: new TabBar(
