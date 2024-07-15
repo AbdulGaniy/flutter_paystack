@@ -25,6 +25,7 @@ class _PinWidgetState extends BaseState<PinWidget> {
     return new CustomAlertDialog(
       content: new SingleChildScrollView(
         child: new Container(
+         color: Colors.white,
           padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
           child: Column(
             mainAxisSize: MainAxisSize.min,
@@ -38,7 +39,8 @@ class _PinWidgetState extends BaseState<PinWidget> {
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   fontWeight: FontWeight.w500,
-                  color: context.textTheme().headlineSmall?.color,
+                  color:
+                  context.textTheme().headlineSmall?.color,
                   fontSize: 15.0,
                 ),
               ),
@@ -69,7 +71,7 @@ class _PinWidgetState extends BaseState<PinWidget> {
     return new Container(
       padding: const EdgeInsets.fromLTRB(6.0, 15.0, 6.0, 6.0),
       decoration: BoxDecoration(
-          color: Theme.of(context).primaryColorDark,
+          color: Colors.white,
           borderRadius: const BorderRadius.all(Radius.circular(5.0))),
       child: new Row(
         mainAxisAlignment: MainAxisAlignment.center,

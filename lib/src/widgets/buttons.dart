@@ -50,7 +50,7 @@ class AccentButton extends StatelessWidget {
       color: context.colorScheme().secondary,
       borderSide: BorderSide.none,
       textStyle: const TextStyle(
-          fontSize: 14.0, color: Colors.white, fontWeight: FontWeight.bold),
+          fontSize: 14.0, color: Colors.black, fontWeight: FontWeight.bold),
       text: text,
     );
   }
